@@ -16,7 +16,6 @@ namespace Bulky.Models
         public int Id { get; set; }
 
         [Required]
-        [DisplayName("Category Name")]
         public string Title { get; set; }
         public string Description { get; set; }
 
