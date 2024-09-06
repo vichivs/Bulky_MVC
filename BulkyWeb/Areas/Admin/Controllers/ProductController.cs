@@ -89,7 +89,7 @@ namespace BulkyWeb.Areas.Admin.Controllers
                 }
                 
                 _unitOfWork.Save();
-                TempData["success"] = "Product created successfully";
+                TempData["success"] = "Product created/updated successfully";
                 return RedirectToAction("Index");
             }
             else
@@ -112,6 +112,7 @@ namespace BulkyWeb.Areas.Admin.Controllers
             return Json(new {data = objProductList});
         }
 
+        //[HttpDelete]
         public IActionResult Delete(int? id)
         {
             var productToBeDeleted = _unitOfWork.Product.Get(u => u.Id == id);
